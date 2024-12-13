@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './SignUpForm.css';
 
 const SignUpForm = () => {
-  const { signUp } = useAuth();
+  const { changeAuthState } = useAuth();
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -15,9 +15,10 @@ const SignUpForm = () => {
     const newUser = {
       name: name,
       email: email,
-      password: password
+      password: password,
+      authenticated: true
     };
-    signUp(newUser);
+    changeAuthState(newUser)
     navigate('/dashboard');
   };
 

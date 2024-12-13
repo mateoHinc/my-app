@@ -8,7 +8,7 @@ const Settings = () => {
     <div>
       <h2>Settings</h2>
       {authState.authenticated ? (
-        <p>Here you can update your settings, {authState.user.name}.</p>
+        <p>Here you can update your settings, {authState.name}.</p>
       ) : (
         <p>Please log in to access your settings.</p>
       )}

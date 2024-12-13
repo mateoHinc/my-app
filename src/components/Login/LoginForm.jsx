@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './LoginForm.css'
 
 const LoginForm = () => {
-    const { login } = useAuth();
+    const { changeAuthState } = useAuth();
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,8 +25,9 @@ const LoginForm = () => {
         const mockUser = {
             name: 'Matt hINC',
             email,
+            authenticated: true,
         };
-        login(mockUser);
+        changeAuthState(mockUser);
         navigate('/dashboard');
       } else {
         setError('Invalid email or password')

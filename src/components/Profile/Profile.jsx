@@ -10,8 +10,8 @@ const Profile = () => {
       <h2>Profile</h2>
       {authState.authenticated ? (
         <p>
-          Name: {authState.user.name} <br />
-          Email: {authState.user.email}
+          Name: {authState.name} <br />
+          Email: {authState.email}
         </p>
       ) : (
         <p>Please log in to view your profile.</p>
